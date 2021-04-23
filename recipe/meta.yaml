@@ -1,4 +1,4 @@
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qqplotr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qqplotr/qqplotr_{{ version }}.tar.gz
-  sha256: 73680feb312468ce3863b725836a2640b5123712ac6845457636024a2dadc7ff
+  sha256: 39709277f35c490558c5b780268ded2fe83cc5f084df52a52780b03566244ac6
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -28,18 +28,12 @@ requirements:
     - r-mass
     - r-dplyr
     - r-ggplot2 >=2.2
-    - r-knitr
-    - r-purrr
-    - r-rmarkdown
     - r-robustbase
   run:
     - r-base
     - r-mass
     - r-dplyr
     - r-ggplot2 >=2.2
-    - r-knitr
-    - r-purrr
-    - r-rmarkdown
     - r-robustbase
 
 test:
@@ -49,10 +43,11 @@ test:
 
 about:
   home: https://github.com/aloy/qqplotr
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Extensions of 'ggplot2' Q-Q plot functionalities.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
