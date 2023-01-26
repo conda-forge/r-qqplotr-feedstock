@@ -1,4 +1,4 @@
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qqplotr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qqplotr/qqplotr_{{ version }}.tar.gz
-  sha256: 39709277f35c490558c5b780268ded2fe83cc5f084df52a52780b03566244ac6
+  sha256: aedb29f07824ce2d0f13df33c0b66805f32f8092fb0861d668291502eaa9414e
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
