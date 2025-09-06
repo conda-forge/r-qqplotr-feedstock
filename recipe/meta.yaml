@@ -1,4 +1,4 @@
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/qqplotr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/qqplotr/qqplotr_{{ version }}.tar.gz
-  sha256: aedb29f07824ce2d0f13df33c0b66805f32f8092fb0861d668291502eaa9414e
+  sha256: 080d1026523443ffab830acb9efc8d7275e571ea4bf47f5f3c6b338306ccfbf2
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
